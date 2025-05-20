@@ -1,6 +1,6 @@
 """
 link to the problem:
-https://leetcode.com/problems/contains-duplicate/
+https://leetcode.com/problems/contains-duplicate/description/
 
 date: May 20, 2025
 """
