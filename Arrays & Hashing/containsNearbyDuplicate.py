@@ -1,18 +1,22 @@
 """
 link to the problem:
-https://leetcode.com/problems/contains-duplicate-ii/description/
+https://leetcode.com/problems/contains-duplicate/
 
 date: May 20, 2025
 """
 
-def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
+def containsDuplicate(self, nums: List[int]) -> bool:
         temp = {}
+        count = 0
 
-        for i in range(len(nums)):
-            if nums[i] in temp:
-                if abs(temp[nums[i]] - i) <= k:
-                    return True
-                temp[nums[i]] = i    
-            else:        
-                temp[nums[i]] = i
-        return False
+        for value in nums:
+            temp[value] = temp.get(value, 0) + 1
+
+        for val in temp.values():
+            if val > 1:
+                return True
+            else:
+                count += 1
+                
+        if count == len(nums):
+            return False
