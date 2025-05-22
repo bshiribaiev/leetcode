@@ -5,6 +5,8 @@ https://leetcode.com/problems/contains-duplicate-ii/description/
 date: May 20, 2025
 """
 
+from typing import List
+
 def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
         temp = {}
 
