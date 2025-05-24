@@ -5,6 +5,8 @@ https://leetcode.com/problems/group-anagrams/description/
 date: May 23, 2025
 """
 
+from typing import List
+
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         if strs == [['']]:
