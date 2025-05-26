@@ -4,35 +4,17 @@ https://leetcode.com/problems/maximum-product-of-three-numbers/description/
 
 date: May 26, 2025
 
-O(n)
+O(nlogn)
 """
 
 from typing import List
 
-def maxProduct(self, nums: List[int]) -> int:
-        currentMax = currentMin = maxProd = nums[0] 
-
-        for i in range(1, len(nums)):
-            tempMax = currentMax * nums[i]
-            tempMin = currentMin * nums[i]
-
-            if nums[i] > tempMax:
-                currentMax = nums[i]
-            else: 
-                currentMax = tempMax
-
-            if currentMax < tempMin:
-                currentMax = tempMin
-            
-            if nums[i] < tempMin:
-                currentMin = nums[i]
-            else:
-                currentMin = tempMin
-                
-            if currentMin > tempMax:
-                currentMin = tempMax
-            
-            if maxProd < currentMax:
-                maxProd = currentMax
-        
-        return maxProd
+class Solution:
+    def maximumProduct(self, nums: List[int]) -> int:
+        nums.sort()
+        product1 = nums[-1] * nums[-2] * nums[-3]
+        product2 = nums[0] * nums[1] * nums[-1]
+        if product1 > product2:
+            return product1
+        else:
+            return product2
