@@ -3,6 +3,8 @@ link to the problem:
 https://leetcode.com/problems/product-of-array-except-self/description/
 
 date: May 27, 2025
+
+O(n)
 """
 
 from typing import List
